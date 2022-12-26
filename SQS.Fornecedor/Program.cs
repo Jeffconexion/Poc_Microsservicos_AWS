@@ -1,6 +1,7 @@
 ﻿using Amazon;
 using Amazon.SQS;
 using Amazon.SQS.Model;
+
 var client = new AmazonSQSClient(RegionEndpoint.SAEast1);
 var request = new SendMessageRequest
 {
