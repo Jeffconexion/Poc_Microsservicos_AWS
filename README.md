@@ -6,12 +6,12 @@
 ### How it is structure
 
 <p>
-Structure and organize an Api Solution, I use Clean Architecture, Design by contract, Model contexts and domains. Then I implement repository pattern.
+There are api, SQS, SNS, DynamoDb and other things.
 </p>
 
 <p display="inline-block">
 <p>
-  <img width="10%"  src="https://static.wikia.nocookie.net/logopedia/images/e/ec/Microsoft_Visual_Studio_2022.svg" alt="vs-logo"/>
+  <img width="70%"  src="https://github.com/Jeffconexion/Poc_Microsservicos_AWS/blob/main/diagrama.png" alt="vs-logo"/>
 
 </p>
 </p>
@@ -22,7 +22,3 @@ Structure and organize an Api Solution, I use Clean Architecture, Design by cont
 ## References
 
 [About .Net - Microsoft Docs](https://docs.microsoft.com/pt-br/dotnet/fundamentals/)
-
-[About Clean Ararchitectures - Microsoft Docs](https://docs.microsoft.com/pt-br/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures)
-
-[Mutation Test - Stryker.Net](https://stryker-mutator.io/docs/stryker-net/introduction/)
