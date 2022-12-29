@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cadastrador", "Cadastrador\Cadastrador.csproj", "{D605E45B-0D66-4A49-8968-43FAC93891D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compartilhado", "Compartilhado\Compartilhado.csproj", "{F79BD063-DBAB-459D-857B-800B1B6B720D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D605E45B-0D66-4A49-8968-43FAC93891D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D605E45B-0D66-4A49-8968-43FAC93891D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D605E45B-0D66-4A49-8968-43FAC93891D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D605E45B-0D66-4A49-8968-43FAC93891D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F79BD063-DBAB-459D-857B-800B1B6B720D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F79BD063-DBAB-459D-857B-800B1B6B720D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F79BD063-DBAB-459D-857B-800B1B6B720D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F79BD063-DBAB-459D-857B-800B1B6B720D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DFC7BA8D-9554-47DC-86D5-A90CD86B58E9}
+	EndGlobalSection
+EndGlobal
