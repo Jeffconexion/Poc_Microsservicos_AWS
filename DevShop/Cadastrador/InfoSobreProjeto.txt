@@ -1,0 +1,4 @@
+﻿1 - Projeto de template criado com AWS Serverless Application
+2 - Web Api .net6
+3 - Publicado no AWS
+4 - O lambda ao receber uma entrada, irá reagir mediante ao evento.
