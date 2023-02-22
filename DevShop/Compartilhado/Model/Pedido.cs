@@ -1,4 +1,6 @@
 ﻿using Amazon.DynamoDBv2.DataModel;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace Model
 {
@@ -19,6 +21,7 @@ namespace Model
 
         public string JustificativaDeCancelamento { get; set; }
 
+        [JsonConverter(typeof(StringEnumConverter))]
         public StatusDoPedido Status { get; set; }
 
         public bool Cancelado { get; set; }

@@ -1,4 +1,4 @@
-﻿using Compartilhado.Model;
+﻿using Compartilhado;
 using Microsoft.AspNetCore.Mvc;
 using Model;
 

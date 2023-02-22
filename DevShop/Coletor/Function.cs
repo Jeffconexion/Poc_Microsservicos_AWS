@@ -3,7 +3,7 @@ using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
 using Amazon.Lambda.Core;
 using Amazon.Lambda.DynamoDBEvents;
-using Compartilhado.Model;
+using Compartilhado;
 using Model;
 
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
@@ -12,7 +12,7 @@ namespace Coletor;
 
 public class Function
 {
-    public async void FunctionHandler(DynamoDBEvent dynamoEvent, ILambdaContext context)
+    public async Task FunctionHandler(DynamoDBEvent dynamoEvent, ILambdaContext context)
     {
 
         foreach (var record in dynamoEvent.Records)
@@ -25,13 +25,18 @@ public class Function
                 try
                 {
                     await ProcessarValorDoPedido(pedido);
+                    await AmazonUtil.EnviarParaFila(EnumFilaSQS.pedido, pedido);
+                    context.Logger.LogLine($"Sucesso na coleta do pedido: '{pedido.Id}'");
                 }
                 catch (Exception ex)
                 {
+                    context.Logger.LogLine($"Erro: '{ex.Message}'");
                     pedido.JustificativaDeCancelamento = ex.Message;
                     pedido.Cancelado = true;
 
                     //Adicionar a fila de falha
+                   await AmazonUtil.EnviarParaFila(EnumFilaSns.falha, pedido);
+
                 }
                 //Salvar o pedido.
                 await pedido.SalvarAsync();
@@ -64,7 +69,7 @@ public class Function
         {
             TableName = "estoque",
             KeyConditionExpression = "Id = :v_id",
-            ExpressionAttributeValues = new Dictionary<string, AttributeValue> { { "v_id", new AttributeValue { S = id } } }
+            ExpressionAttributeValues = new Dictionary<string, AttributeValue> { { ":v_id", new AttributeValue { S = id } } }
         };
 
         var response = await client.QueryAsync(request);
