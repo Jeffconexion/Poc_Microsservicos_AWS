@@ -35,7 +35,7 @@ public class Function
                     pedido.Cancelado = true;
 
                     //Adicionar a fila de falha
-                   await AmazonUtil.EnviarParaFila(EnumFilaSns.falha, pedido);
+                    await AmazonUtil.EnviarParaFila(EnumFilaSns.falha, pedido);
 
                 }
                 //Salvar o pedido.
